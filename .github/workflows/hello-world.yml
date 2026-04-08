@@ -12,5 +12,14 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest  # Utilise une machine virtuelle Linux
     steps:
+      # Étape 1 : On récupère le code du dépôt
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Étape 2 : Ton message précédent
       - name: Print Message
         run: echo "Hello, GitHub Actions!"
+
+      # Étape 3 : Bonus pour vérifier que le checkout a marché
+      - name: List files in the repository
+        run: ls -R
