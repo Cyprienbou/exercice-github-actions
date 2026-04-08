@@ -1,0 +1,16 @@
+# Le nom qui apparaîtra dans l'onglet "Actions" de GitHub
+name: Hello World Exercise
+
+# Déclencheur (Trigger) : Quand est-ce que le workflow doit s'exécuter ?
+on:
+  push:
+    branches:
+      - main  # S'exécute uniquement lors d'un push sur la branche main
+
+# Ce que le workflow doit faire
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Utilise une machine virtuelle Linux
+    steps:
+      - name: Print Message
+        run: echo "Hello, GitHub Actions!"
